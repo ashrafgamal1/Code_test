@@ -107,18 +107,14 @@ class Find_Number_Occurrences  // Second Game Find the Number of Occurrences in 
     {
     clock_t start5,end5;
     start5=clock();//start calculation the time taken in the function
-    /* Base Case */
-    if (start > end)
+    if (start > end) // Base Case 
     return NULL;
-    /* Get the middle element and make it root */
-    int mid = (start + end)/2;
+    int mid = (start + end)/2; // Get the middle element and make it root 
     Node *root = newNode(arr1D[mid]);
-    /* Recursively construct the left subtree
-    and make it left child of root */
-    root->left = sortedArrayToBST(arr1D, start,mid - 1,time5);
-    /* Recursively construct the right subtree
-    and make it right child of root */
-    root->right = sortedArrayToBST(arr1D, mid + 1, end,time5);
+    root->left = sortedArrayToBST(arr1D, start,mid - 1,time5); /* Recursively construct the left subtree
+                                                                and make it left child of root */
+    root->right = sortedArrayToBST(arr1D, mid + 1, end,time5);/* Recursively construct the right subtree
+                                                                and make it right child of root */
     end5=clock();//end calculation
     time5 =double(end5-start5)/double(CLOCKS_PER_SEC);
     return root;
@@ -132,9 +128,9 @@ class Find_Number_Occurrences  // Second Game Find the Number of Occurrences in 
     else
     {
     if ((node->data)==y)
-        counts++;
-    preOrder_And_FindOccurrence(node->left,y,counts,time6);//function calls itself with left node
-    preOrder_And_FindOccurrence(node->right,y,counts,time6);//function calls itself with right node
+        counts++; //count its occurrence
+    preOrder_And_FindOccurrence(node->left,y,counts,time6);   //function calls itself with left node
+    preOrder_And_FindOccurrence(node->right,y,counts,time6);  //function calls itself with right node
     }
     end6=clock();//end calculation
     time6 =double(end6-start6)/double(CLOCKS_PER_SEC);
@@ -185,10 +181,10 @@ int main()
     {
     unordered_map<int,string>cars{{0,"Kia"},{1,"Honda"},{2,"Mercedes"},{3,"Bmw"},{5,"Dodge"},{6,"Ford"},{7,"Hyundai"},{9,"Toyota"}};
    //Hash table
-    cars[7]="Suzuki";
+    cars[7]="Suzuki";    // insert elements into the hash table
     cars[4]="Chevrolet";
     cout<<"Enter Number of rounds :  "<<endl;
-    rounds=Enter_Number();//take number of rounds the user wants to play
+    rounds=Enter_Number();  //take number of rounds the user wants to play
     cout<<endl;
     call(Scores1,Scores2,PlayerName,rounds,cars,Total_Time_taken1);
     }
@@ -198,14 +194,14 @@ int main()
     char arr2D[N][N];
     char arr1D[N*N];
     int counts=0;
-    Game2.Display_2DArray(arr2D,Total_Time_taken2);//function to display random matrix
-    Game2.Copy_Elements(arr2D,arr1D,Total_Time_taken3);//
-    Game2.bubbleSort_Array(arr1D,Total_Time_taken4);//function for sorting
-    Node *root = Game2.sortedArrayToBST(arr1D,0,N*N-1,Total_Time_taken5);//function takes the elements in the array and put them in binary search tree
-    srand(time(0));//function to get random numbers and characters in the matrix in each attempt
+    Game2.Display_2DArray(arr2D,Total_Time_taken2);     //function to display random matrix
+    Game2.Copy_Elements(arr2D,arr1D,Total_Time_taken3); //convert our matrix into sorted array
+    Game2.bubbleSort_Array(arr1D,Total_Time_taken4);    //function for sorting
+    Node *root = Game2.sortedArrayToBST(arr1D,0,N*N-1,Total_Time_taken5); //function takes the elements in the array and put them in binary search tree
+    srand(time(0));   //function to get random numbers and characters in the matrix in each attempt
     int x=rand()%26;
     char key= 'a' + x;
-    Game2.preOrder_And_FindOccurrence(root,key,counts,Total_Time_taken6);//function includes second puzzle game which is number of occurrence game
+    Game2.preOrder_And_FindOccurrence(root,key,counts,Total_Time_taken6); //function includes second puzzle game which is number of occurrence game
     int Number_Of_Occurrences=counts;
     cout<<endl<<endl;
     cout<<"Enter Your Guess About Number Of Occurrences Of "<<key<<" :   "<<endl;
