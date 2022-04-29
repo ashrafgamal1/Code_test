@@ -181,7 +181,7 @@ int main()
     {
     unordered_map<int,string>cars{{0,"Kia"},{1,"Honda"},{2,"Mercedes"},{3,"Bmw"},{5,"Dodge"},{6,"Ford"},{7,"Hyundai"},{9,"Toyota"}};
    //Hash table
-    cars[7]="Suzuki";    // insert elements into the hash table
+    cars[8]="Suzuki";    // insert elements into the hash table
     cars[4]="Chevrolet";
     cout<<"Enter Number of rounds :  "<<endl;
     rounds=Enter_Number();  //take number of rounds the user wants to play
