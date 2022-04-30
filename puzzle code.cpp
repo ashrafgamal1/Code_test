@@ -20,7 +20,7 @@ int Enter_Number();  //function to get only numbers Positive integers and greate
 int Enter_Age();     //function to get age of the player which is only numbers Positive , >0 & <100
 int Check_for_Hint_Number();   //function to get help in word search of puzzle
 int Choose_Game();            //function to choose which game to play
-int call(int& , int& , string ,int,unordered_map<int,string>a,double &);   /*function includes first
+void call(int& , int& , string ,int,unordered_map<int,string>a,double &);   /*function includes first
                                                                            puzzle game which is Countries or general words*/
 void Welcome_NewPlayer(string);     // function includes welcome message for players
 class Node         // class  to make a node for bst
@@ -241,7 +241,7 @@ int main()
     return 0;
 }
 
-int call(int& Player_Score, int& Computer_Score, string PlayerName, int roundsOfGame, unordered_map<int,string>a,double &t)
+void call(int& Player_Score, int& Computer_Score, string PlayerName, int roundsOfGame, unordered_map<int,string>a,double &t)
 {   clock_t start2,end2,start3,end3;
     t=0.0;
     start2=clock();
